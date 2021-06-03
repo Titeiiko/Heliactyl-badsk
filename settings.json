@@ -1,0 +1,492 @@
+{
+  "version": "0.2.13-beta",
+  "defaulttheme": "default",
+  "website": {
+    "port": 25566,
+    "secret": "uhuJDujbdnAbadk"
+  },
+  "pterodactyl": {
+    "domain": "https://gp.hexitnodes.xyz/",
+    "key": "aVG502uJSUe2WaYx5GdsK30A2mBWCcHdrfIhL209Z3RHVauR"
+  },
+  "database": "sqlite://database.sqlite",
+  "api": {
+    "client": {
+       "api": {
+         "enabled": true,
+         "code": "aVG502uJSUe2WaYx5GdsK30A2mBWCcHdrfIhL209Z3RHVauR"
+       },
+       "j4r": {
+         "enabled": true,
+         "servers": ["847137967210496001"],
+         "every": {
+             "cpu": 5,
+             "ram": 512,
+             "disk": 2048,
+             "servers": 1
+         },
+         "ads": [
+             {
+             	"name": "Sryden J4R Test",
+                "invite": "https://discord.gg/Tz2bkhk5Pn"
+         	 },
+             {
+                 "name": "EndCraft",
+                 "invite": "https://discord.gg/vSm7FGUXRf"
+         	 },
+             {
+                 "name": "Oreo Development",
+                 "invite": "https://discord.gg/DQR6jXbex3"
+             },
+             {
+                 "name": "Code Works",
+                 "invite": "https://discord.gg/x3HE2kAmfQ"
+             }
+         ]
+       },
+       "bot": {
+         "token": "",
+         "joinguild": {
+           "_comment": "The Discord bot must be in these servers and have invite permissions.",
+           "enabled": false,
+           "guildid": [""]
+        }
+      },
+      "passwordgenerator": {
+        "signup": true,
+        "length": 16
+      },
+      "allow": {
+        "newusers": true,
+        "regen": true,
+        "server": {
+          "create": true,
+          "modify": true,
+          "delete": true
+        },
+        "overresourcessuspend": false,
+        "renewsuspendsystem": {
+          "_comment": "This feature requires a restart in order to work. Also, this requires every server to start suspended, or else this feature would not work for some servers.",
+          "enabled": false,
+          "time": 3600
+        }
+      },
+      "oauth2": {
+        "_comment": "Go to https://discord.dev/ and create an application to set these up.",
+        "id": "847391714221883413",
+        "secret": "gOsFXzITLXxOfODIU6xISe7dgAfVapPN",
+        "link": "https://cp.hexitnodes.xyz",
+        "callbackpath": "/callback",
+        "prompt": true,
+
+        "ip": {
+          "trust x-forwarded-for": true,
+          "block": [],
+          "duplicate check": false
+        }
+      },
+      "ratelimits": {
+        "/callback": 2,
+        "/create": 1,
+        "/delete": 1,
+        "/modify": 1,
+        "/updateinfo": 1,
+        "/setplan": 2,
+        "/admin": 1,
+        "/regen": 1,
+        "/renew": 1,
+        "/api/userinfo": 1
+      },
+      "packages": {
+        "default": "default",
+        "list": {
+          "default": {
+            "ram": 3072,
+            "disk": 10240,
+            "cpu": 125,
+            "servers": 2
+          },
+          "booster": {
+            "ram": 9216,
+            "disk": 20480,
+            "cpu": 200,
+            "servers": 6
+          },
+          "Donator1": {
+            "ram": 5120,
+            "disk": 30720,
+            "cpu": 160,
+            "servers": 15
+          }
+        }
+      },
+      "locations": {
+        "1": {
+          "name": "✅ | Germany",
+
+          "_comment": "Make 'package' be null to allow anyone with enough resources in their plan to create a server with this location. Also, make the 'package' variable an array, like [], with the location names with quotes to make a user be required to have a plan in order to use the package.",
+          "package": null
+        },
+        "2": {
+          "name": "✅ | Finland",
+
+          "_comment": "Make 'package' be null to allow anyone with enough resources in their plan to create a server with this location. Also, make the 'package' variable an array, like [], with the location names with quotes to make a user be required to have a plan in order to use the package.",
+          "package": null
+        },
+        "4": {
+          "name": "✨ | Priority (Boosters & Node Access only)",
+
+          "_comment": "Make 'package' be null to allow anyone with enough resources in their plan to create a server with this location. Also, make the 'package' variable an array, like [], with the location names with quotes to make a user be required to have a plan in order to use the package.",
+          "package": ["booster"]
+        }
+      },
+      "eggs": {
+        "paper": {
+          "display": "Minecraft Java",
+          "minimum": {
+            "ram": 1024,
+            "disk": 1024,
+            "cpu": 100
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 3,
+            "docker_image": "quay.io/parkervcp/pterodactyl-images:debian_openjdk-16",
+            "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
+            "environment": {
+              "SERVER_JARFILE": "server.jar",
+              "BUILD_NUMBER": "latest"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+        "forge": {
+          "display": "Minecraft Forge",
+          "minimum": {
+            "ram": 512,
+            "disk": 512,
+            "cpu": 75
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 2,
+            "docker_image": "quay.io/pterodactyl/core:java",
+            "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+            "environment": {
+              "SERVER_JARFILE": "server.jar",
+              "MC_VERSION": "latest",
+              "BUILD_TYPE": "recommended"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+        "vanilla": {
+          "display": "Minecraft Vanilla",
+          "minimum": {
+            "ram": 512,
+            "disk": 512,
+            "cpu": 75
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 5,
+            "docker_image": "quay.io/pterodactyl/core:java",
+            "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+            "environment": {
+              "SERVER_JARFILE": "server.jar",
+              "VANILLA_VERSION": "latest"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+        "sponge": {
+          "display": "Minecraft Sponge",
+          "minimum": {
+            "ram": 512,
+            "disk": 512,
+            "cpu": 75
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 4,
+            "docker_image": "quay.io/pterodactyl/core:java-glibc",
+            "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+            "environment": {
+              "SERVER_JARFILE": "server.jar",
+              "SPONGE_VERSION": "1.12.2-7.3.0"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+        "pocketminemp": {
+          "display": "Minecraft Bedrock",
+          "minimum": {
+            "ram": 512,
+            "disk": 512,
+            "cpu": 75
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 19,
+            "docker_image": "quay.io/parkervcp/pterodactyl-images:base_debian",
+            "startup": "./bin/php7/bin/php ./PocketMine-MP.phar --no-wizard --disable-ansi",
+            "environment": {
+              "VERSION": "latest",
+              "GITHUB_PACKAGE": "pmmp/PocketMine-MP",
+              "MATCH": "PocketMine-MP.phar"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+        "bungeecord": {
+          "display": "Minecraft BungeeCord",
+          "minimum": {
+            "ram": 512,
+            "disk": 512,
+            "cpu": 75
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 1,
+            "docker_image": "quay.io/pterodactyl/core:java",
+            "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+            "environment": {
+              "SERVER_JARFILE": "bungeecord.jar",
+              "BUNGEE_VERSION": "latest"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+        "space": {
+          "display": "------------------------------------",
+          "minimum": {
+            "ram": 512,
+            "disk": 512,
+            "cpu": 75
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 777,
+            "docker_image": "SPACE",
+            "startup": "SPACE",
+            "environment": {
+              "SERVER_JARFILE": "bungeecord.jar",
+              "BUNGEE_VERSION": "latest"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+	"discord.js": {
+          "display": "Discord.js (NEW)",
+          "minimum": {
+            "ram": 1,
+            "disk": 1,
+            "cpu": 1
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 17,
+            "docker_image": "quay.io/parkervcp/pterodactyl-images:debian_nodejs-12",
+            "startup": "node {{BOT_JS_FILE}}",
+            "environment": {
+              "BOT_JS_FILE": "index.js",
+	      "NODE_PACKAGES": "",	
+	      "USER_UPLOAD": "0",
+	      "AUTO_UPDATE": "0",
+	      "PASSWORD": "",
+	      "INSTALL_BRANCH": "",
+	      "INSTALL_REPO": "",
+	      "USERNAME": ""
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+	"discord.py": {
+          "display": "Discord.py (NEW)",
+          "minimum": {
+            "ram": 1,
+            "disk": 1,
+            "cpu": 1
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 21,
+            "docker_image": "quay.io/parkervcp/pterodactyl-images:debian_python-3.8",
+            "startup": "python {{BOT_PY_FILE}}",
+            "environment": {
+              "BOT_PY_FILE": "bot.py",
+	      "PY_PACKAGES": "",	
+	      "USER_UPLOAD": "0",
+	      "AUTO_UPDATE": "0",
+	      "PASSWORD": "",
+	      "INSTALL_BRANCH": "",
+	      "INSTALL_REPO": "",
+	      "USERNAME": "",
+          "REQUIREMENTS_FILE": "requirements.txt"
+           },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+        "space2": {
+          "display": "------------------------------------",
+          "minimum": {
+            "ram": 512,
+            "disk": 512,
+            "cpu": 75
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 777,
+            "docker_image": "SPACE",
+            "startup": "SPACE",
+            "environment": {
+              "SERVER_JARFILE": "bungeecord.jar",
+              "BUNGEE_VERSION": "latest"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        },
+        "fivem": {
+          "display": "GTA FiveM (SOON)",
+          "minimum": {
+            "ram": 512,
+            "disk": 512,
+            "cpu": 75
+          },
+          "maximum": {
+            "ram": null,
+            "disk": null,
+            "cpu": null
+          },
+          "info": {
+            "egg": 20,
+            "docker_image": "quay.io/parkervcp/pterodactyl-images:base_debian",
+            "startup": "{{STARTUP_CMD}}",
+            "environment": {
+              "MAX_PLAYERS": "32",
+              "SERVER_HOSTNAME": "NEW FXServer hosted by Hexit",
+              "FIVEM_VERSION": "latest",
+              "FIVEM_LICENSE": "idfk",
+              "STEAM_WEBAPIKEY": "none",
+              "TXADMIN_PORT": "40120",
+              "TXADMIN_ENABLE": "0"
+            },
+            "feature_limits": {
+              "databases": 1,
+              "backups": 1
+            }
+          }
+        }
+      },
+      "coins": {
+        "enabled": true,
+        "store": {
+          "_comment": "The cost and per is not intended to used with 0. This is not intended to sell resources for coins. Make sure coins are enabled too, or else there can be errors.",
+          "enabled": true,
+          "ram": {
+            "cost": 500,
+            "per": 1024
+          },
+          "disk": {
+            "cost": 50,
+            "per": 1024
+          },
+          "cpu": {
+            "cost": 250,
+            "per": 100
+          },
+          "servers": {
+            "cost": 100,
+            "per": 1
+          }
+        }
+      }
+    },
+    "arcio": {	
+      "_comment": "You can make an arc.io widget on https://arc.io. You can get money using arc.io.",	
+      "enabled": false,	
+      "widgetid": "",	
+      "afk page": {	
+        "_comment": "This will not effect any current arc.io sessions, and will require a restart to kick everyone out of the websocket sesison.",	
+        "_comment2": "Make sure coins are enabled if you choose to enable this option!",	
+        "enabled": true,	
+        "_comment3": "If you change the path, you need to restart for it to take full effect.",	
+        "path": "coins",	
+        "_comment4": "This afk page will give the users [coins variable] coins every [every variable] seconds.",	
+        "every": 60,	
+        "_comment5": "The coins variable is meant to not be under 1. There may be bugs if the coins variable is less than 1.",	
+        "coins": 0.1
+      }	
+    }
+  }
+}

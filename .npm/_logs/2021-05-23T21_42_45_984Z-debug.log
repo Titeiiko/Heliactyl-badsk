@@ -1,0 +1,55 @@
+0 verbose cli [
+0 verbose cli   '/home/container/.nvm/versions/node/v14.17.0/bin/node',
+0 verbose cli   '/home/container/.npm-global/bin/npm',
+0 verbose cli   'start'
+0 verbose cli ]
+1 info using npm@7.14.0
+2 info using node@v14.17.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:/home/container/.npm-global/lib/node_modules/npm/npmrc Completed in 0ms
+6 timing config:load:builtin Completed in 0ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:project Completed in 1ms
+10 timing config:load:file:/home/container/.npmrc Completed in 0ms
+11 timing config:load:user Completed in 0ms
+12 timing config:load:file:/home/container/.npm-global/etc/npmrc Completed in 0ms
+13 timing config:load:global Completed in 0ms
+14 timing config:load:validate Completed in 1ms
+15 timing config:load:credentials Completed in 0ms
+16 timing config:load:setEnvs Completed in 1ms
+17 timing config:load Completed in 6ms
+18 timing npm:load:configload Completed in 6ms
+19 timing npm:load:setTitle Completed in 0ms
+20 timing npm:load:setupLog Completed in 0ms
+21 timing npm:load:cleanupLog Completed in 2ms
+22 timing npm:load:configScope Completed in 0ms
+23 timing npm:load:projectScope Completed in 0ms
+24 timing npm:load Completed in 9ms
+25 timing config:load:flatten Completed in 1ms
+26 timing command:run-script Completed in 2ms
+27 timing command:start Completed in 4ms
+28 verbose stack Error: Missing script: "start"
+28 verbose stack
+28 verbose stack Did you mean one of these?
+28 verbose stack     npm star # Mark your favorite packages
+28 verbose stack     npm stars # View packages marked as favorites
+28 verbose stack
+28 verbose stack To see a list of scripts, run:
+28 verbose stack   npm run
+28 verbose stack     at RunScript.run (/home/container/.npm-global/lib/node_modules/npm/lib/run-script.js:105:13)
+29 verbose cwd /home/container
+30 verbose Linux 5.4.0-67-generic
+31 verbose argv "/home/container/.nvm/versions/node/v14.17.0/bin/node" "/home/container/.npm-global/bin/npm" "start"
+32 verbose node v14.17.0
+33 verbose npm  v7.14.0
+34 error Missing script: "start"
+34 error
+34 error Did you mean one of these?
+34 error     npm star # Mark your favorite packages
+34 error     npm stars # View packages marked as favorites
+34 error
+34 error To see a list of scripts, run:
+34 error   npm run
+35 verbose exit 1
