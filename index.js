@@ -5,7 +5,6 @@
 const fs = require("fs");
 const fetch = require('node-fetch');
 const chalk = require("chalk");
-const arciotext = require("./api/arcio.js").text;
 
 // Load settings.
 
@@ -44,9 +43,6 @@ module.exports.renderdataeval =
         servers: 0
       }),
       packages: req.session.userinfo ? newsettings.api.client.packages.list[await db.get("package-" + req.session.userinfo.id) ? await db.get("package-" + req.session.userinfo.id) : newsettings.api.client.packages.default] : null,
-      coins: newsettings.api.client.coins.enabled == true ? (req.session.userinfo ? (await db.get("coins-" + req.session.userinfo.id) ? await db.get("coins-" + req.session.userinfo.id) : 0) : null) : null,
-	  every: newsettings.api.arcio["afk page"].every,
-	  earn: newsettings.api.arcio["afk page"].coins,
       pterodactyl: req.session.pterodactyl,
       theme: theme.name,
       extra: theme.settings.variables,
